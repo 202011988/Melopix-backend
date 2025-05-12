@@ -22,7 +22,7 @@ public class PhototagApiController {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    @GetMapping
+    @PostMapping()
     public PhototagApiVO getDescriptionByPhoto(@RequestParam("file") MultipartFile file) throws IOException {
 
         String url = "https://server.phototag.ai/api/keywords";
