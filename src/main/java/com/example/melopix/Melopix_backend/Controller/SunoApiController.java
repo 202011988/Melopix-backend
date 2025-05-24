@@ -35,7 +35,7 @@ public class SunoApiController {
                 "customMode", false,
                 "instrumental", true,
                 "model", "V3_5",
-                "callBackUrl", "https://3584-14-36-196-171.ngrok-free.app/api/callback"
+                "callBackUrl", "https://melopix.iptime.org/api/callback"
         );
 
         HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);
