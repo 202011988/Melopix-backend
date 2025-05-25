@@ -30,12 +30,16 @@ public class SseService {
                 emitter.send(SseEmitter.event()
                         .name("music-result")
                         .data(payload));
-                emitter.complete();
-                emitters.remove(taskId);
+
+                if ("complete".equals(payload.get("type"))) {
+                    emitter.complete();
+                    emitters.remove(taskId);
+                }
             } catch (IOException e) {
                 emitter.completeWithError(e);
                 emitters.remove(taskId);
             }
         }
     }
+
 }
